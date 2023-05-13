@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mensagens</title>
+    <!-- Adicione os arquivos CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tabela</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="font-weight: bold">Name</th>
+            <th style="font-weight: bold">Email</th>
+            <th style="font-weight: bold">Mensagem</th>
+          </tr>
+        </thead>
+        <tbody id="messagesTableBody">
+        </tbody>
+      </table>
+    </div>
+    <div>
+        <a href="index.html">
+            <button type="button">homepage</button>
+        </a>
+    </div>
+    <!-- Adicione os arquivos JavaScript do Bootstrap -->
+    <script src="assets/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="assets/js/popper-base.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    axios.get('http://localhost:2023/read')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    // Extrai os dados da resposta
+    const messages = response.data;
+    // Seleciona o elemento tbody da tabela
+    const tbody = document.querySelector('table > tbody');
+    // Itera sobre os dados e adiciona linhas na tabela
+    messages.forEach((message) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${message.nome}</td>
+        <td>${message.email}</td>
+        <td>${message.mensagem}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });
+
+  </script>
+</html>

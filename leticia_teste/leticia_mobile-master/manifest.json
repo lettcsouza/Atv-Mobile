@@ -1,0 +1,42 @@
+{
+  "lang": "en",
+  "background_color": "#ffffff",
+  "description": "site visualização daft punk. feito para a disciplina de mobile. autora: leticia correia.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Daft Punk Official",
+  "orientation": "any",
+  "scope": "https://master--daftpunkoffc.netlify.app/",
+  "short_name": "Daft Punk Official",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+        "src": "https://master--daftpunkoffc.netlify.app/assets/AppIcons/playstore.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+    },
+    {
+        "src": "https://master--daftpunkoffc.netlify.app/assets/AppIcons/android/mipmap-xxxhdpi/dafticon",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+    },
+    {
+      "src": "https://master--daftpunkoffc.netlify.app/assets/AppIcons/android/mipmap-xxhdpi/dafticon",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+  }
+  ],
+  
+  "shortcuts": [],
+  "display_override": [
+    "window-control-overlay",
+    "standalone",
+    "browser"
+  ]
+}
